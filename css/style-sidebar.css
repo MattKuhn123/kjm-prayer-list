@@ -86,7 +86,7 @@ details.sidebar-button summary.sidebar-button-icon {
   border-radius: 2px;
 }
 
-details.sidebar-button + article.sidebar-content {
+main.sidebar-body article.sidebar-content {
   width: 80%;
-  margin: 10px auto;
+  margin: 0px auto;
 }
