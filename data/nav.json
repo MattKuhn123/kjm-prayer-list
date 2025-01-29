@@ -5,7 +5,8 @@
   },
   {
     "text": "Justice Prayer List",
-    "href":"/pages/justice-prayer-list.html"
+    "href":"/pages/justice-prayer-list.html",
+    "default": true
   },
   {
     "text": "Test",

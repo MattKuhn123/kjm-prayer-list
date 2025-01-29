@@ -55,5 +55,8 @@ window.addEventListener("load", async (ev) => {
   if (cheat) {
     localStorage.removeItem("cheat");
     await setHtmlFromTarget(cheat);
+  } else {
+    const defaultPage = links.find(x => x.default).href;
+    await setHtmlFromTarget(defaultPage);
   }
 });
