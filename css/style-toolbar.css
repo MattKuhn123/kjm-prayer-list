@@ -27,3 +27,9 @@ nav.toolbar menu.toolbar-menu li a {
 nav.toolbar menu.toolbar-menu li a.external::after {
   content: "\2197";
 }
+
+@media print {
+  nav.toolbar {
+    display: none !important;
+  }
+}

@@ -89,4 +89,24 @@ details.sidebar-button summary.sidebar-button-icon {
 main.sidebar-body article.sidebar-content {
   width: 80%;
   margin: 0px auto;
+  background-color: white;
+}
+
+
+@media print {
+  main.sidebar-body {
+    border-left: none !important;
+  }
+
+  details.sidebar-button {
+    display: none;
+  }
+
+  nav.sidebar-nav {
+    display: none !important;
+  }
+
+  body.sidebar-container {
+    height: fit-content !important;
+  }
 }
