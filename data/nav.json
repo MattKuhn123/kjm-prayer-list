@@ -3,5 +3,10 @@
     "href": "https://kjministries.org/",
     "text": "About",
     "external": true
+  },
+  {
+    "href":"./pages/justice-prayer-list.html",
+    "text": "Justice Prayer List",
+    "external": false
   }
 ]

@@ -8,6 +8,14 @@ window.addEventListener("load", async (ev) => {
     if (link.external) {
       a.setAttribute("target", "_blank");
       a.setAttribute("class", "external");
+    } else {
+      a.addEventListener("click", async (ev) => {
+        ev.preventDefault();
+        const target = ev.currentTarget.getAttribute("href");
+        const html = await (await (await fetch(target)).blob()).text();
+        const sidebarContent = document.querySelector("#sidebar-content");
+        sidebarContent.innerHTML = html;
+      });
     }
 
     const li = document.createElement("li");
