@@ -20,9 +20,20 @@
   text-wrap: nowrap;
 }
 
-.side-bar-nav:has(+ .side-bar-body details[open]) {
-  flex: 20;
-  transition: flex 0.25s;
+/* 600px for mobile */
+@media (max-width: 600px) {
+  .side-bar-nav:has(+ .side-bar-body details[open]) {
+    flex: 160;
+    transition: flex 0.25s;
+  }
+}
+
+/* 601px for desktop */
+@media (min-width: 601px) {
+  .side-bar-nav:has(+ .side-bar-body details[open]) {
+    flex: 20;
+    transition: flex 0.25s;
+  }
 }
 
 .side-bar-body {
