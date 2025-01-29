@@ -2,6 +2,9 @@
 <!-- expected layout -->
 <body class="side-bar-container">
   <nav class="side-bar-nav">
+  <menu>
+    <li><a></a></li>
+  </menu>
   </nav>
   <main class="side-bar-body">
     <details class="side-bar-button">
