@@ -1,7 +1,23 @@
-.page-header {
-  padding: 20px;
+:root {
+  --color-primary: orange;
+}
+
+header.gradient {
   background: linear-gradient(black 90%, white);
-  color: orange;
+}
+
+header.color-primary {
+  color: var(--color-primary);
+}
+
+header.padding-20 {
+  padding: 20px;
+}
+
+header.center {
   text-align: center;
+}
+
+header.larger {
   font-size: larger;
 }
