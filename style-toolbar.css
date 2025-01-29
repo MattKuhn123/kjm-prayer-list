@@ -1,0 +1,29 @@
+nav.toolbar {
+  position: sticky;
+  background-color: black;
+  color: white;
+  width: 100%;
+  top: 0px;
+  display: flex;
+}
+
+nav.toolbar menu.toolbar-menu {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  margin-right: 10px;
+  gap: 10px;
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0; /* prevent a random gap that the container doesn't cover */
+  padding: 5px 0px;
+  align-items: baseline;
+}
+
+nav.toolbar menu.toolbar-menu li a {
+  color: white;
+}
+
+nav.toolbar menu.toolbar-menu li a.external::after {
+  content: "\2197";
+}
