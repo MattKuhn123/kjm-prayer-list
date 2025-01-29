@@ -28,8 +28,10 @@ window.addEventListener("load", async (ev) => {
   });
 
   const setHtmlFromTarget = async (target) => {
-    if (target === "/") {
-      return; // TODO
+    if (target === "/" || target === "" ) {
+      // According to testing, this shouldn't happen.
+      // But, still, if target is blank, it makes sense to go to default.
+      target = links.find(x => x.default).href;
     }
 
     const html = await (await (await fetch(target)).blob()).text();
