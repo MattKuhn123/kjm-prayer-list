@@ -1,0 +1,86 @@
+:root {
+  --primary: black;
+  --accent: white;
+}
+
+.side-bar-container {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+
+  /* to prevent scroll */
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.side-bar-nav {
+  display: flex;
+  flex-direction: column;
+
+  flex: 0;
+  transition: flex 0.25s;
+
+  /* to prevent jumpiness when minimizing/maximizing side-bar */
+  overflow-x: hidden;
+  text-wrap: nowrap;
+}
+
+.side-bar-nav:has(+ .side-bar-body details[open]) {
+  flex: 20;
+  transition: flex 0.25s;
+}
+
+.side-bar-body {
+  flex: 80;
+
+  border-left: 1px solid var(--primary);
+
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.side-bar-toggle {
+  position: fixed;
+  top: 0px;
+  z-index: 1;
+}
+
+.side-bar-toggle-icon {
+  display: block;
+  background-color: lightgray;
+  padding: 2px;
+  border: 1px solid black;
+  border-radius: 2px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.side-bar-content {
+  width: 80%;
+  margin: 10px auto;
+}
+
+.us-justices-table {
+  width: 100%;
+}
+
+.us-justices-table thead {
+  background-color: var(--accent);
+}
+
+.us-justices-table tbody tr:nth-child(odd) {
+  background-color: var(--accent);
+}
+
+.us-justices-table tbody tr td {
+  padding: 5px 15px;
+  border-bottom: 1px solid var(--primary);
+}
+
+.us-justices-table td:last-child {
+  text-align: end;
+}
+
+a:hover {
+  color: var(--primary);
+}
