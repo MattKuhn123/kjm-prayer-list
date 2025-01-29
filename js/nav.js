@@ -37,6 +37,7 @@ window.addEventListener("load", async (ev) => {
     sidebarContent.innerHTML = html;
     
     const sidebarNavMenu = document.querySelector("#sidebar-nav-menu");
+    sidebarNavMenu.innerHTML = "";
     sidebarContent.querySelectorAll("h1[id], h2[id]").forEach(header => {
       const text = header.textContent;
       const a = document.createElement("a");
