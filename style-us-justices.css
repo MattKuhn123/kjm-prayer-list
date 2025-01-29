@@ -1,25 +1,28 @@
-:root {
-  --primary: black;
-  --accent: white;
-}
-
 .us-justices-table {
   width: 100%;
 }
 
 .us-justices-table thead {
-  background-color: var(--accent);
+  background-color: white;
 }
 
 .us-justices-table tbody tr:nth-child(odd) {
-  background-color: var(--accent);
+  background-color: white;
 }
 
 .us-justices-table tbody tr td {
   padding: 5px 15px;
-  border-bottom: 1px solid var(--primary);
+  border-bottom: 1px solid black;
 }
 
 .us-justices-table td:last-child {
   text-align: end;
+}
+
+.us-justices-header {
+  padding: 20px;
+  background: linear-gradient(black 90%, white);
+  color: orange;
+  text-align: center;
+  font-size: larger;
 }
