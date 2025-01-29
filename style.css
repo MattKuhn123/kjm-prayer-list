@@ -39,20 +39,23 @@
   overflow-y: scroll;
 }
 
-.side-bar-toggle {
+.side-bar-button {
   position: fixed;
   top: 0px;
   z-index: 1;
 }
 
-.side-bar-toggle-icon {
+.side-bar-button-icon::before {
+  content: "\2630"; /* hamburger unicode */
+  font-size: small;
+}
+
+.side-bar-button-icon {
   display: block;
   background-color: lightgray;
-  padding: 2px;
+  padding: 2px 5px;
   border: 1px solid black;
   border-radius: 2px;
-  width: fit-content;
-  height: fit-content;
 }
 
 .side-bar-content {
