@@ -1,4 +1,20 @@
-.side-bar-container {
+/* 
+<!-- expected layout -->
+<body class="side-bar-container">
+  <nav class="side-bar-nav">
+  </nav>
+  <main class="side-bar-body">
+    <details class="side-bar-button">
+      <summary class="side-bar-button-icon"></summary>
+    </details>
+    <article class="side-bar-content">
+      <!-- content goes here -->
+    </article>
+  </main>
+</body> 
+*/
+
+body.side-bar-container {
   display: flex;
   flex-direction: row;
   gap: 5px;
@@ -8,7 +24,7 @@
   overflow-y: hidden;
 }
 
-.side-bar-nav {
+body.side-bar-container nav.side-bar-nav {
   display: flex;
   flex-direction: column;
 
@@ -22,7 +38,7 @@
 
 /* 600px for mobile */
 @media (max-width: 600px) {
-  .side-bar-nav:has(+ .side-bar-body details[open]) {
+  body.side-bar-container nav.side-bar-nav:has(+ .side-bar-body details[open]) {
     flex: 160;
     transition: flex 0.25s;
   }
@@ -30,13 +46,13 @@
 
 /* 601px for desktop */
 @media (min-width: 601px) {
-  .side-bar-nav:has(+ .side-bar-body details[open]) {
+  body.side-bar-container nav.side-bar-nav:has(+ .side-bar-body details[open]) {
     flex: 20;
     transition: flex 0.25s;
   }
 }
 
-.side-bar-body {
+nav.side-bar-nav + main.side-bar-body {
   flex: 80;
 
   border-left: 1px solid black;
@@ -45,18 +61,18 @@
   overflow-y: scroll;
 }
 
-.side-bar-button {
+main.side-bar-body details.side-bar-button {
   position: fixed;
   top: 0px;
   z-index: 1;
 }
 
-.side-bar-button-icon::before {
+details.side-bar-button summary.side-bar-button-icon::before {
   content: "\2630"; /* hamburger unicode */
   font-size: small;
 }
 
-.side-bar-button-icon {
+details.side-bar-button summary.side-bar-button-icon {
   display: block;
   background-color: lightgray;
   padding: 2px 5px;
@@ -64,7 +80,8 @@
   border-radius: 2px;
 }
 
-.side-bar-content {
+details.side-bar-button + article.side-bar-content {
   width: 80%;
   margin: 10px auto;
 }
+
