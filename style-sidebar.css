@@ -61,6 +61,10 @@ nav.side-bar-nav + main.side-bar-body {
   overflow-y: scroll;
 }
 
+nav.side-bar-nav menu li a:hover {
+  color: var(--primary);
+}
+
 main.side-bar-body details.side-bar-button {
   position: fixed;
   top: 0px;

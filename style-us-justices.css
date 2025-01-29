@@ -23,7 +23,3 @@
 .us-justices-table td:last-child {
   text-align: end;
 }
-
-a:hover {
-  color: var(--primary);
-}
