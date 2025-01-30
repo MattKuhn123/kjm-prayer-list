@@ -1,33 +1,10 @@
 window.addEventListener("load", async (ev) => {
-  const nav = document.querySelector("#toolbar-menu");
-  const links = await (await fetch("/data/nav.json")).json();
-  links.forEach(link => {
-    const a = document.createElement("a");
-    a.setAttribute("href", link.href);
-    a.text = link.text;
-    const isExternal = !link.href.startsWith("/");
-    if (isExternal) {
-      a.setAttribute("target", "_blank");
-      a.setAttribute("class", "external");
-    } else {
-      a.addEventListener("click", async (ev) => {
-        ev.preventDefault();
-        const target = ev.currentTarget.getAttribute("href");
-        await setHtmlFromTarget(target);
-      });
-    }
-
-    const li = document.createElement("li");
-    li.appendChild(a)
-    nav.appendChild(li);
-  });
-
   window.addEventListener("popstate", async (ev) => {
     const target = document.location.pathname;
-    await setHtmlFromTarget(target);
+    await setSideBar(target);
   });
 
-  const setHtmlFromTarget = async (target) => {
+  const setSideBar = async (target) => {
     if (target === "/" || target === "" ) {
       // According to testing, this shouldn't happen.
       // But, still, if target is blank, it makes sense to go to default.
@@ -56,9 +33,9 @@ window.addEventListener("load", async (ev) => {
   const cheat = localStorage.getItem("cheat");
   if (cheat) {
     localStorage.removeItem("cheat");
-    await setHtmlFromTarget(cheat);
+    await setSideBar(cheat);
   } else {
-    const defaultPage = links.find(x => x.default).href;
-    await setHtmlFromTarget(defaultPage);
+    // const defaultPage = links.find(x => x.default).href;
+    // await setSideBar(defaultPage);
   }
 });

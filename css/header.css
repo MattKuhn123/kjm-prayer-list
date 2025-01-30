@@ -1,7 +1,3 @@
-:root {
-  --color-primary: orange;
-}
-
 header.gradient {
   background: linear-gradient(black 90%, white);
 }

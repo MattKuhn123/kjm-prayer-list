@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/style-table.css" />
-  <link rel="stylesheet" href="/css/style-header.css" />
-  <link rel="stylesheet" href="/css/style-sidebar.css" />
-  <link rel="stylesheet" href="/css/style-toolbar.css" />
-  <script src="/js/nav.js"></script>
-  <title>US Justices</title>
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/root.css" />
+  <link rel="stylesheet" href="/css/sidebar.css" />
+  <link rel="stylesheet" href="/css/table.css" />
+  <link rel="stylesheet" href="/css/toolbar.css" />
+  <script src="/js/toolbar.js"></script>
+  <title>Kentucky Jail Ministry Blog</title>
 </head>
 
 <body class="sidebar-container">
@@ -28,7 +29,14 @@
     <nav class="toolbar">
       <menu id="toolbar-menu" class="toolbar-menu">
         <span>Kentucky Jail Ministries</span>
-        <!-- populated by JS -->
+        <a target="_blank" href="https://kjministries.org/">About</a>
+        <div class="dropdown">
+          <button class="dropdown-button">Prayer Lists</button>
+          <div class="dropdown-content">
+            <a href="/pages/justices.html">Justices</a>
+            <a href="/pages/test.html">TEST</a>
+          </div>
+        </div>
       </menu>
     </nav>
     
