@@ -2,14 +2,14 @@
 <!-- expected layout -->
 <body class="sidebar-container">
   <nav class="sidebar-nav">
+  <details class="sidebar-button">
+    <summary class="sidebar-button-icon"></summary>
+  </details>
   <menu>
     <li><a></a></li>
   </menu>
   </nav>
   <main class="sidebar-body">
-    <details class="sidebar-button">
-      <summary class="sidebar-button-icon"></summary>
-    </details>
     <article class="sidebar-content">
       <!-- content goes here -->
     </article>
@@ -20,42 +20,34 @@
 body.sidebar-container {
   display: flex;
   flex-direction: row;
-  gap: 5px;
 
   /* to prevent scroll */
   height: 100vh;
   overflow-y: hidden;
 }
 
-body.sidebar-container nav.sidebar-nav {
-  display: flex;
-  flex-direction: column;
-
+body.sidebar-container details.sidebar-nav {
   flex: 0;
   transition: flex 0.25s;
-
-  /* to prevent jumpiness when minimizing/maximizing sidebar */
-  overflow-x: hidden;
-  text-wrap: nowrap;
 }
 
 /* 600px for mobile */
 @media (max-width: 600px) {
-  body.sidebar-container nav.sidebar-nav:has(+ .sidebar-body details[open]) {
-    flex: 160;
+  details.sidebar-nav[open] {
+    flex: 160 !important;
     transition: flex 0.25s;
   }
 }
 
 /* 601px for desktop */
 @media (min-width: 601px) {
-  body.sidebar-container nav.sidebar-nav:has(+ .sidebar-body details[open]) {
-    flex: 20;
+  details[open] {
+    flex: 20 !important;
     transition: flex 0.25s;
   }
 }
 
-nav.sidebar-nav + main.sidebar-body {
+details.sidebar-nav + section.sidebar-body {
   flex: 80;
 
   border-left: 1px solid black;
@@ -64,37 +56,43 @@ nav.sidebar-nav + main.sidebar-body {
   overflow-y: scroll;
 }
 
-nav.sidebar-nav menu li a:hover {
+details.sidebar-nav a:hover {
   color: var(--primary);
 }
 
-main.sidebar-body details.sidebar-button {
-  position: absolute;
-  z-index: 1;
+details.sidebar-nav summary {
+  list-style: none;
+  display: flex; /* The only way to get id of a minor misalignment */
 }
 
-details.sidebar-button summary.sidebar-button-icon::before {
+span.sidebar-button-icon::before {
   content: "\2630"; /* hamburger unicode */
   font-size: small;
 }
 
-details.sidebar-button summary.sidebar-button-icon {
-  display: block;
+span.sidebar-button-icon {
   background-color: lightgray;
   padding: 2px 5px;
   border: 1px solid black;
   border-radius: 2px;
 }
 
-main.sidebar-body article.sidebar-content {
+span.sidebar-button-icon:hover {
+  background-color: darkgray;
+}
+
+span.sidebar-button-icon:active {
+  background-color: gray;
+}
+
+section.sidebar-body article.sidebar-content {
   width: 80%;
   margin: 0px auto;
   background-color: white;
 }
 
-
 @media print {
-  main.sidebar-body {
+  section.sidebar-body {
     border-left: none !important;
   }
 

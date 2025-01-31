@@ -10,6 +10,6 @@ table.border-bottom tbody tr td {
   border-bottom: 1px solid black;
 }
 
-table.text-align-end td:last-child {
+table.last-cell-text-align-end td:last-child {
   text-align: end;
 }
