@@ -17,7 +17,7 @@
 </body> 
 */
 
-body.sidebar-container {
+div.sidebar-container {
   display: flex;
   flex-direction: row;
 
@@ -26,7 +26,7 @@ body.sidebar-container {
   overflow-y: hidden;
 }
 
-body.sidebar-container details.sidebar-nav {
+div.sidebar-container details.sidebar-nav {
   flex: 0;
   transition: flex 0.25s;
 }
@@ -104,7 +104,7 @@ section.sidebar-body article.sidebar-content {
     display: none !important;
   }
 
-  body.sidebar-container {
+  div.sidebar-container {
     height: fit-content !important;
   }
 }

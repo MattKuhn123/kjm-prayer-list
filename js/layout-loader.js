@@ -6,8 +6,8 @@ window.addEventListener("load", async () => {
   const layoutHeadHTML = await (await (await fetch("/layout/layout-head.html")).blob()).text();
   const layoutBodyHTML = await (await (await fetch("/layout/layout-body.html")).blob()).text();
 
-  document.head.outerHTML = layoutHeadHTML;
-  document.body.outerHTML = layoutBodyHTML;
+  document.head.innerHTML = layoutHeadHTML;
+  document.body.innerHTML = layoutBodyHTML;
   document.querySelector("#sidebar-content").innerHTML = mainHTML;
 
   document.querySelector("#sidebar-content").querySelectorAll("h1[id], h2[id]").forEach(header => {
